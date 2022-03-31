@@ -1,6 +1,7 @@
 import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget';
 
-const NavBar = () => {
+const NavBar = (props) => {
     const estilosH1 = {
         backgroundColor: 'black',
         color: 'red'
@@ -14,6 +15,10 @@ const NavBar = () => {
     return(
         <header>
                 <h1 style={estilosH1}>The Wine Project</h1>
+                <h2>{props.name}</h2>
+                <div>
+                    <CartWidget />
+                </div>
             <nav className='navegacion'>
                 <ul style={estilosDivMenu} className='divMenu'>
                     <li><a href="#">Inicio</a></li>
