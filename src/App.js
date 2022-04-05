@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -6,7 +7,12 @@ import Boton from './components/Boton/Boton'
 import ClassCounter from './components/ClassCounter/ClassCounter';
 
 const App = () => {
+  const [show, setShow] = useState(true)
   const title = 'Ecommerce'
+
+  const handleOnAdd = (quantity) => {
+    console.log(`Se agregaron ${quantity} productos`)
+  }
 
   const miFuncion = () => {
     console.log('hice click en mi boton')
@@ -17,8 +23,8 @@ const App = () => {
         <ItemListContainer greeting={'BIENVENIDOS A:'} />
         <NavBar name={title}/>
         <button>Ingresar</button>
-        {/* <Contador />
-        <ClassCounter />
+        { show ? <Contador /*initial={0} stock={8}*/ onAdd={handleOnAdd}/> : null}
+        {/* <ClassCounter />
         <Boton callback={miFuncion} label="Mi boton" /> */}
       </div>
   );

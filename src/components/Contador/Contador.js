@@ -1,20 +1,24 @@
-const Contador = () => {
+import './Contador.css'
+import { useState, useEffect } from 'react';
 
-    let count = 0
+const Contador = (initial, stock, onAdd) => {
 
-    const decrement = () => {
-        count = count -1
-    }
+    const [count, setCount] = useState(0);
 
     const increment = () => {
-        count = count +1
+        setCount(count + 1)
+    }
+    
+    const decrement = () => {
+        setCount(count - 1)
     }
 
     return(
-        <div>
-            <button onClick={decrement}>-</button>
-            <p>{count}</p>
-            <button onClick={increment}>+</button>
+        <div className='divContador'>
+            <button className='botonMyM' onClick={increment}>+</button>
+            <p className='numCantidad'>{count}</p>
+            <button className='botonMyM' onClick={decrement}>-</button>
+            <button className='botonAgregar' onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
     )
 }
