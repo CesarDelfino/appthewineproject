@@ -31,3 +31,38 @@
     padding: 12px;
 }
 
+.divContador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botonMyM {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: brown;
+    color: aqua;
+    width: 30px;
+}
+
+.numCantidad {
+    font-size: 30px;
+}
+
+.botonAgregar {
+    margin-top: 10px;
+    background-color: tomato;
+    width: 120px;
+    height: 40px;
+}
+
+.irAlCarrito {
+    font-size: 25px;
+    margin-top: 10px;
+    background-color: tomato;
+    width: 150px;
+    height: 45px;
+    border-radius: 20px;
+    border-color: blue;
+    border-style: solid;
+}

@@ -30,7 +30,7 @@ const productos = [
 
 const categories = [
     {id: 'tinto', description: 'Malbec'},
-    {id: 'tinto', description: 'Pinot Noir'},
+    {id: 'rosado', description: 'Pinot Noir'},
     {id: 'blanco', description: 'Dulce Natural'}
 ]
 

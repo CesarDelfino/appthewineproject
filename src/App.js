@@ -7,7 +7,8 @@ import MLListContainer from './components/MLListContainer/MLListContainer'
 import Boton from './components/Boton/Boton'
 import ClassCounter from './components/ClassCounter/ClassCounter';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Form from './components/Form/Form';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 const App = () => {
   const [show, setShow] = useState({path: 'list', param: 1})
@@ -36,6 +37,7 @@ const App = () => {
             <Link to='/list'>Lista</Link>
             <Link to='/detail'>Detalles</Link>
           </div> */}
+          <Link to='/form' className='Option'>Form</Link>
           <Routes>
             {/* <Route path='/list' element={<ItemListContainer/>} />
             <Route path='/detail' element={<ItemDetailContainer/>} />
@@ -44,6 +46,7 @@ const App = () => {
             <Route path='/category/:categoryId' element={<ItemListContainer />} />
             <Route path='/detalle/:productId' element={<ItemDetailContainer />} />
             <Route path='/' element={<ItemListContainer />} />
+            <Route path='/form' element={<Form />} />
           </Routes>
         </BrowserRouter>
         {/* <ItemListContainer greeting={'BIENVENIDOS A:'} />
