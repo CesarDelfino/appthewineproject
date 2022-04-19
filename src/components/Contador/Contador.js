@@ -1,7 +1,7 @@
 import './Contador.css'
 import { useState, useEffect } from 'react';
 
-const Contador = (initial, stock, onAdd) => {
+const Contador = ({initial, stock, onAdd}) => {
 
     const [count, setCount] = useState(0);
 
