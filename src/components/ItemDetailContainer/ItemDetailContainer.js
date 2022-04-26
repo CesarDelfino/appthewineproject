@@ -7,8 +7,6 @@ const ItemDetailContainer = ( { setCart, cart } ) => {
     const [product, setProduct] = useState()
     const [loading, setLoading] = useState(true)
 
-    
-
     const {productId } = useParams()
 
     useEffect(() => {
@@ -23,13 +21,17 @@ const ItemDetailContainer = ( { setCart, cart } ) => {
         return (() => {
             setProduct()
         })
-    }, [])
+    }, [productId])
+
+    if(loading) {
+        return(
+            <h1>Cargando...</h1>
+        )
+    }
 
     return (
         <div className='ItemDetailContainer'>
             {
-                loading ?
-                <h1>Cargando...</h1> :
                 product ?
                     <ItemDetail {...product} setCart={setCart} cart={cart}/> :
                     <h1>El producto no existe</h1>

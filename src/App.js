@@ -10,6 +10,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Form from './components/Form/Form';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { CartContextProvider } from './context/CartContext';
+import Cart from './components/Cart/Cart';
+import { NotificationProvider } from './notification/Notification'
 
 export const Context = createContext()
 
@@ -37,26 +39,29 @@ const App = () => {
         {/* <ClassCounter />
         <Boton callback={miFuncion} label="Mi boton" /> */}
         {/* <Context.Provider value={{ cart, setCart }}> */}
-        <CartContextProvider>
-          <BrowserRouter>
-            <NavBar />
-            {/* <div>
-              <Link to='/list'>Lista</Link>
-              <Link to='/detail'>Detalles</Link>
-            </div> */}
-            <Link to='/form' className='Option'>Form</Link>
-            <Routes>
-              {/* <Route path='/list' element={<ItemListContainer/>} />
-              <Route path='/detail' element={<ItemDetailContainer/>} />
-              <Route path='*' element={<h1>NOT FOUND 404</h1>} /> */}
-              <Route path='/' element={<ItemListContainer />} />
-              <Route path='/category/:categoryId' element={<ItemListContainer />} />
-              <Route path='/detalle/:productId' element={<ItemDetailContainer setCart={setCart} cart={cart}/>} />
-              <Route path='/' element={<ItemListContainer />} />
-              <Route path='/form' element={<Form />} />
-            </Routes>
-          </BrowserRouter>
-        </CartContextProvider>
+        <NotificationProvider>
+          <CartContextProvider>
+            <BrowserRouter>
+              <NavBar />
+              {/* <div>
+                <Link to='/list'>Lista</Link>
+                <Link to='/detail'>Detalles</Link>
+              </div> */}
+              <Link to='/form' className='Option'>Form</Link>
+              <Routes>
+                {/* <Route path='/list' element={<ItemListContainer/>} />
+                <Route path='/detail' element={<ItemDetailContainer/>} />
+                <Route path='*' element={<h1>NOT FOUND 404</h1>} /> */}
+                <Route path='/' element={<ItemListContainer />} />
+                <Route path='/category/:categoryId' element={<ItemListContainer />} />
+                <Route path='/detalle/:productId' element={<ItemDetailContainer setCart={setCart} cart={cart}/>} />
+                <Route path='/' element={<ItemListContainer />} />
+                <Route path='/form' element={<Form />} />
+                <Route path='/cart' element={<Cart />} />
+              </Routes>
+            </BrowserRouter>
+          </CartContextProvider>
+        </NotificationProvider>
         {/* </Context.Provider> */}
         {/* <ItemListContainer greeting={'BIENVENIDOS A:'} />
         <ItemDetailContainer /> */}

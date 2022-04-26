@@ -1,18 +1,18 @@
 const productos = [
     {
         id: '1',
-        name: 'luigi bosca',
+        name: 'Luigi bosca',
         price: 3500,
-        category: 'vinostintos',
+        category: 'Tinto',
         img: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/001/069/568/products/lb-malbec-c1-619359e4bc4109550015906041734954-480-0.jpg',
         stock: 15,
         description: 'Caracteristicas del vino'
     },
     {
         id: '2',
-        name: 'misterio',
+        name: 'Misterio',
         price: 1200,
-        category: 'vinosblancos',
+        category: 'Blanco',
         img: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/398/294/products/v-misterio-dulce-nat-6x7501-75c962e4015096e25d15894812820222-640-0.jpg',
         stock: 20,
         description: 'Caracteristicas del vino'
@@ -21,7 +21,7 @@ const productos = [
         id: '3',
         name: 'Trapiche',
         price: 1700,
-        category: 'vinostintos',
+        category: 'Tinto',
         img: 'https://www.espaciovino.com.ar/media/default/0001/59/thumb_58137_default_medium.jpeg',
         stock: 30,
         description: 'Caracteristicas del vino'

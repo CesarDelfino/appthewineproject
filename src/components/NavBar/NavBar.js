@@ -38,7 +38,7 @@ const NavBar = (props) => {
                     {/* <NavLink to='/list' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option' }>Lista</NavLink>
                     <NavLink to='/detail' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Detalles</NavLink> */}
                     { categories.map(cat=> <NavLink key={cat.id} to={`/category/${cat.id}`}
-                        // hacer el css: className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}
+                        className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}
                     >{cat.description}</NavLink>)}
                         
                 </div>
