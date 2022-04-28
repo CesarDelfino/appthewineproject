@@ -19,19 +19,19 @@ const productos = [
     },
     {
         id: '3',
-        name: 'Trapiche',
-        price: 1700,
-        category: 'Tinto',
-        img: 'https://www.espaciovino.com.ar/media/default/0001/59/thumb_58137_default_medium.jpeg',
-        stock: 30,
+        name: 'Trumpeter',
+        price: 11900,
+        category: 'Espumante',
+        img: 'https://rinconelegido.com.ar/wp-content/uploads/2017/08/TRUMPETERBRUTNATURE.jpg',
+        stock: 7,
         description: 'Caracteristicas del vino'
     }
 ]
 
 const categories = [
-    {id: 'tinto', description: 'Malbec'},
-    {id: 'rosado', description: 'Pinot Noir'},
-    {id: 'blanco', description: 'Dulce Natural'}
+    {id: 'Tinto', description: 'Tinto'},
+    {id: 'Blanco', description: 'Blanco'},
+    {id: 'Espumante', description: 'Espumante'}
 ]
 
 export const getCategories = () => {
