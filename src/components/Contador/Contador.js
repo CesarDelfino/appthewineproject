@@ -9,14 +9,12 @@ const Contador = ({stock= 0, initial= 1, onAdd}) => {
         if(quantity < stock) {
             setQuantity(quantity + 1)
         }
-        // setCount(count + 1)
     }
     
     const decrement = () => {
         if(quantity > 0) {
             setQuantity(quantity - 1)
         }
-        // setCount(count - 1)
     }
 
     if(stock === 0) {

@@ -58,7 +58,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock, /*setC
     // const [typeInput, setTypeInput] = useState(true)
     // const [quantity, setQuantity] = useState(0)
 
-    const { addItem, isInCart } = useContext(CartContext)
+    const { addItem, isInCart, getQuantityProd } = useContext(CartContext)
 
     const { setNotification } = useNotification()
 
@@ -123,7 +123,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock, /*setC
                 {
                     isInCart(id)
                         ? <Link to='/cart' className='irAlCarrito'>Ir al carrito</Link>
-                        : <Contador initial={0} stock={5} onAdd={handleAdd} />
+                        : <Contador initial={getQuantityProd(id)} stock={stock} onAdd={handleAdd} />
                 }
                 {
                     isInCart(id) ? <button><Link to='/cart' className='finalizarCompra' style={{textDecoration:'none'}}>Finalizar Compra</Link></button> : ""
