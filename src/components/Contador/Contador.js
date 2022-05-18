@@ -1,9 +1,8 @@
 import './Contador.css'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Contador = ({stock= 0, initial= 1, onAdd}) => {
     const [quantity, setQuantity] = useState(initial)
-    // const [count, setCount] = useState(0);
 
     const increment = () => {
         if(quantity < stock) {

@@ -3,8 +3,6 @@ import CartWidget from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getCategories } from '../asyncmock';
-import { firestoreDb } from '../../services/firebase';
-import { getDocs, collection } from 'firebase/firestore'
 
 const NavBar = (props) => {
     const [categories, setCategories] = useState([])
@@ -23,12 +21,6 @@ const NavBar = (props) => {
         getCategories().then(categories => {
             setCategories(categories)
         })
-        // getDocs(collection(firestoreDb, 'categories')).then(response => {
-        //     const categories = response.docs.map(doc => {
-        //         return { id: doc.id, ...doc.data() }
-        //     })
-        //     setCategories(categories)
-        // })
     }, [])
 
     return(
@@ -38,13 +30,6 @@ const NavBar = (props) => {
             </Link>
                 <h2>{props.name}</h2>
                 <div>
-                    {/* {<button className='Option'>Tinto</button>}
-                    {<button className='Option'>Blanco</button>}
-                    {<button className='Option'>Rosado</button>} */}
-                    {/* <Link to='/list'>List</Link>
-                    <Link to='/detail'>Detalles</Link> */}
-                    {/* <NavLink to='/list' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option' }>Lista</NavLink>
-                    <NavLink to='/detail' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Detalles</NavLink> */}
                     { categories.map(cat=> <NavLink key={cat.id} to={`/category/${cat.id}`}
                         className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}
                     >{cat.description}</NavLink>)}
